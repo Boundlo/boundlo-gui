@@ -128,6 +128,9 @@ export default function (vm, useCatBlocks) {
                 }
             }
         }
+        if (sprites.length == 0) return [
+            ['']
+        ];
         return sprites;
     };
 
@@ -140,6 +143,18 @@ export default function (vm, useCatBlocks) {
             return menu;
         }
         const myself = ScratchBlocks.ScratchMsgs.translate('CONTROL_CREATECLONEOF_MYSELF', 'myself');
+        return [[myself, '_myself_']].concat(spriteMenu());
+    };
+
+    const cloneMenudeleteid = function () {
+        if (vm.editingTarget && vm.editingTarget.isStage) {
+            const menu = spriteMenu();
+            if (menu.length === 0) {
+                return [['', '']]; // Empty menu matches Scratch 2 behavior
+            }
+            return menu;
+        }
+        const myself = ScratchBlocks.ScratchMsgs.translate('CONTROL_DELETECLONEWITHID_MYOWN', 'my own');
         return [[myself, '_myself_']].concat(spriteMenu());
     };
 
@@ -195,6 +210,31 @@ export default function (vm, useCatBlocks) {
         this.jsonInit(json);
     };
 
+    ScratchBlocks.Blocks.looks_golayerinfrontofbehindobject_menu.init = function () {
+        const json = jsonForMenuBlock('OBJECT', spriteMenu, looksColors, []);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.sensing_behind_menu.init = function () {
+        const json = jsonForMenuBlock('OBJECT', spriteMenu, sensingColors, []);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.control_as_object_menu.init = function () {
+        const original = ScratchBlocks.ScratchMsgs.translate('CONTROL_ASOBJECT_ORIGINAL', 'original');
+        const clones = ScratchBlocks.ScratchMsgs.translate('CONTROL_ASOBJECT_CLONES', 'clones');
+        const json = jsonForMenuBlock('OBJECT', spriteMenu, controlColors, [
+            [original, '_original_'],
+            [clones, '_clones_']
+        ]);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.control_stop_object_menu.init = function () {
+        const json = jsonForMenuBlock('OBJECT', spriteMenu, controlColors, []);
+        this.jsonInit(json);
+    };
+
     ScratchBlocks.Blocks.motion_glideto_menu.init = function () {
         const random = ScratchBlocks.ScratchMsgs.translate('MOTION_GLIDETO_RANDOM', 'random position');
         const mouse = ScratchBlocks.ScratchMsgs.translate('MOTION_GLIDETO_POINTER', 'mouse-pointer');
@@ -233,7 +273,10 @@ export default function (vm, useCatBlocks) {
             const stageOptions = [
                 [ScratchBlocks.Msg.SENSING_OF_BACKDROPNUMBER, 'backdrop #'],
                 [ScratchBlocks.Msg.SENSING_OF_BACKDROPNAME, 'backdrop name'],
-                [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume']
+                [ScratchBlocks.Msg.SENSING_OF_LASTBACKDROP_NUMBER, 'last backdrop (number)'],
+                [ScratchBlocks.Msg.SENSING_OF_LASTBACKDROP_NAME, 'last backdrop (name)'],
+                [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume'],
+                [ScratchBlocks.Msg.SENSING_OF_NAME, 'name']
             ];
             const spriteOptions = [
                 [ScratchBlocks.Msg.SENSING_OF_XPOSITION, 'x position'],
@@ -241,8 +284,14 @@ export default function (vm, useCatBlocks) {
                 [ScratchBlocks.Msg.SENSING_OF_DIRECTION, 'direction'],
                 [ScratchBlocks.Msg.SENSING_OF_COSTUMENUMBER, 'costume #'],
                 [ScratchBlocks.Msg.SENSING_OF_COSTUMENAME, 'costume name'],
+                [ScratchBlocks.Msg.SENSING_OF_LASTCOSTUME_NUMBER, 'last costume (number)'],
+                [ScratchBlocks.Msg.SENSING_OF_LASTCOSTUME_NAME, 'last costume (name)'],
                 [ScratchBlocks.Msg.SENSING_OF_SIZE, 'size'],
-                [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume']
+                [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume'],
+                [ScratchBlocks.Msg.SENSING_OF_NAME, 'name'],
+                [ScratchBlocks.Msg.SENSING_OF_VISIBLE, 'visible'],
+                [ScratchBlocks.Msg.SENSING_OF_LAYER, 'layer'],
+                [ScratchBlocks.Msg.SENSING_OF_CLONESAMOUNT, 'clones amount']
             ];
             if (vm.editingTarget) {
                 let lookupBlocks = vm.editingTarget.blocks;
@@ -313,8 +362,23 @@ export default function (vm, useCatBlocks) {
         this.jsonInit(json);
     };
 
+    ScratchBlocks.Blocks.event_touchingobjectmenu.init = function () {
+        const mouse = ScratchBlocks.ScratchMsgs.translate('SENSING_TOUCHINGOBJECT_POINTER', 'mouse-pointer');
+        const edge = ScratchBlocks.ScratchMsgs.translate('SENSING_TOUCHINGOBJECT_EDGE', 'edge');
+        const json = jsonForMenuBlock('TOUCHINGOBJECTMENU', spriteMenu, eventColors, [
+            [mouse, '_mouse_'],
+            [edge, '_edge_']
+        ]);
+        this.jsonInit(json);
+    };
+
     ScratchBlocks.Blocks.control_create_clone_of_menu.init = function () {
         const json = jsonForMenuBlock('CLONE_OPTION', cloneMenu, controlColors, []);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.control_delete_clone_with_id_menu.init = function () {
+        const json = jsonForMenuBlock('CLONE_OPTION', cloneMenudeleteid, controlColors, []);
         this.jsonInit(json);
     };
 

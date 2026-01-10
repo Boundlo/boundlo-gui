@@ -81,7 +81,7 @@ const BrowserModal = ({intl, ...props}) => {
                                     >
                                         <FormattedMessage
                                             defaultMessage="FAQ"
-                                            description="link to Scratch 3.0 FAQ page"
+                                            description="link to Boundlo 1.0 FAQ page"
                                             id="gui.unsupportedBrowser.previewfaqlinktext"
                                         />
                                     </a>

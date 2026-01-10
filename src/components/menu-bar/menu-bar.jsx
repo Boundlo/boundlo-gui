@@ -85,11 +85,7 @@ import aboutIcon from './icon--about.svg';
 import fileIcon from './icon--file.svg';
 import editIcon from './icon--edit.svg';
 
-import scratchLogo from './scratch-logo.svg';
-import ninetiesLogo from './nineties_logo.svg';
-import catLogo from './cat_logo.svg';
-import prehistoricLogo from './prehistoric-logo.svg';
-import oldtimeyLogo from './oldtimey-logo.svg';
+import scratchLogo from './boundlo-logo.svg';
 
 import sharedMessages from '../../lib/shared-messages';
 
@@ -242,29 +238,11 @@ class MenuBar extends React.Component {
     handleSetMode (mode) {
         return () => {
             // Turn on/off filters for modes.
-            if (mode === '1920') {
-                document.documentElement.style.filter = 'brightness(.9)contrast(.8)sepia(1.0)';
-                document.documentElement.style.height = '100%';
-            } else if (mode === '1990') {
-                document.documentElement.style.filter = 'hue-rotate(40deg)';
-                document.documentElement.style.height = '100%';
-            } else {
-                document.documentElement.style.filter = '';
-                document.documentElement.style.height = '';
-            }
+            document.documentElement.style.filter = '';
+            document.documentElement.style.height = '';
 
             // Change logo for modes
-            if (mode === '1990') {
-                document.getElementById('logo_img').src = ninetiesLogo;
-            } else if (mode === '2020') {
-                document.getElementById('logo_img').src = catLogo;
-            } else if (mode === '1920') {
-                document.getElementById('logo_img').src = oldtimeyLogo;
-            } else if (mode === '220022BC') {
-                document.getElementById('logo_img').src = prehistoricLogo;
-            } else {
-                document.getElementById('logo_img').src = this.props.logo;
-            }
+            document.getElementById('logo_img').src = this.props.logo;
 
             this.props.onSetTimeTravelMode(mode);
         };
@@ -690,7 +668,7 @@ class MenuBar extends React.Component {
                     <div className={styles.fileGroup}>
                         <div
                             aria-label={this.props.intl.formatMessage(ariaMessages.tutorials)}
-                            className={classNames(styles.menuBarItem, styles.hoverable, 'tutorials-button')}
+                            className={classNames(styles.menuBarItem, styles.hoverable)}
                             onClick={this.props.onOpenTipLibrary}
                         >
                             <img

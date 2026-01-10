@@ -1,7 +1,7 @@
 {
   "name": "scratch-gui",
   "version": "4.1.7",
-  "description": "Graphical User Interface for creating and running Scratch 3.0 projects",
+  "description": "Graphical User Interface for creating and running Boundlo 1.0 projects",
   "author": "Massachusetts Institute of Technology",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/scratchfoundation/scratch-gui#readme",

@@ -42,12 +42,12 @@
 .inactive {
     opacity: 0;
 }
-.scratch-logo {
+.boundlo-logo {
     height:  1.6rem;
     vertical-align: middle;
 }
 
-.scratch-logo.clickable {
+.boundlo-logo.clickable {
     cursor: pointer;
 }
 

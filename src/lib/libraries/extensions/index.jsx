@@ -56,6 +56,7 @@ export default [
             />
         ),
         extensionId: 'music',
+        collaborator: 'Scratch',
         iconURL: musicIconURL,
         insetIconURL: musicInsetIconURL,
         description: (
@@ -76,6 +77,7 @@ export default [
             />
         ),
         extensionId: 'pen',
+        collaborator: 'Scratch',
         iconURL: penIconURL,
         insetIconURL: penInsetIconURL,
         description: (
@@ -96,6 +98,7 @@ export default [
             />
         ),
         extensionId: 'videoSensing',
+        collaborator: 'Scratch',
         iconURL: videoSensingIconURL,
         insetIconURL: videoSensingInsetIconURL,
         description: (
@@ -116,7 +119,7 @@ export default [
             />
         ),
         extensionId: 'text2speech',
-        collaborator: 'Amazon Web Services',
+        collaborator: 'Scratch & Amazon Web Services',
         iconURL: text2speechIconURL,
         insetIconURL: text2speechInsetIconURL,
         description: (
@@ -138,7 +141,7 @@ export default [
             />
         ),
         extensionId: 'translate',
-        collaborator: 'Google',
+        collaborator: 'Scratch & Google',
         iconURL: translateIconURL,
         insetIconURL: translateInsetIconURL,
         description: (
@@ -154,7 +157,7 @@ export default [
     {
         name: 'Makey Makey',
         extensionId: 'makeymakey',
-        collaborator: 'JoyLabz',
+        collaborator: 'Scratch & JoyLabz',
         iconURL: makeymakeyIconURL,
         insetIconURL: makeymakeyInsetIconURL,
         description: (
@@ -169,7 +172,7 @@ export default [
     {
         name: 'micro:bit',
         extensionId: 'microbit',
-        collaborator: 'micro:bit',
+        collaborator: 'Scratch & micro:bit',
         iconURL: microbitIconURL,
         insetIconURL: microbitInsetIconURL,
         description: (
@@ -199,7 +202,7 @@ export default [
     {
         name: 'LEGO MINDSTORMS EV3',
         extensionId: 'ev3',
-        collaborator: 'LEGO',
+        collaborator: 'Scratch & LEGO',
         iconURL: ev3IconURL,
         insetIconURL: ev3InsetIconURL,
         description: (
@@ -229,7 +232,7 @@ export default [
     {
         name: 'LEGO BOOST',
         extensionId: 'boost',
-        collaborator: 'LEGO',
+        collaborator: 'Scratch & LEGO',
         iconURL: boostIconURL,
         insetIconURL: boostInsetIconURL,
         description: (
@@ -260,7 +263,7 @@ export default [
     {
         name: 'LEGO Education WeDo 2.0',
         extensionId: 'wedo2',
-        collaborator: 'LEGO',
+        collaborator: 'Scratch & LEGO',
         iconURL: wedo2IconURL,
         insetIconURL: wedo2InsetIconURL,
         description: (
@@ -291,7 +294,7 @@ export default [
     {
         name: 'Go Direct Force & Acceleration',
         extensionId: 'gdxfor',
-        collaborator: 'Vernier',
+        collaborator: 'Scratch & Vernier',
         iconURL: gdxforIconURL,
         insetIconURL: gdxforInsetIconURL,
         description: (
