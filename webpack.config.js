@@ -110,25 +110,25 @@ const buildConfig = baseConfig.clone()
     .addPlugin(new HtmlWebpackPlugin({
         chunks: ['gui'],
         template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI'
+        title: 'Boundlo 1'
     }))
     .addPlugin(new HtmlWebpackPlugin({
         chunks: ['blocksonly'],
         filename: 'blocks-only.html',
         template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI: Blocks Only Example'
+        title: 'Boundlo 1: Blocks Only Example'
     }))
     .addPlugin(new HtmlWebpackPlugin({
         chunks: ['compatibilitytesting'],
         filename: 'compatibility-testing.html',
         template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI: Compatibility Testing'
+        title: 'Boundlo 1: Compatibility Testing'
     }))
     .addPlugin(new HtmlWebpackPlugin({
         chunks: ['player'],
         filename: 'player.html',
         template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI: Player Example'
+        title: 'Boundlo 1: Player Example'
     }))
     .addPlugin(new CopyWebpackPlugin({
         patterns: [

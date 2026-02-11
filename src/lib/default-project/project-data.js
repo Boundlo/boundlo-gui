@@ -1,5 +1,6 @@
 import {defineMessages} from 'react-intl';
 import sharedMessages from '../shared-messages';
+const jsonData = require('./experience-container/experience.json');
 
 let messages = defineMessages({
     meow: {
@@ -24,96 +25,7 @@ const defaultTranslator = msgObj => msgObj.defaultMessage;
  * @param {function} translateFunction a function to use for translating the default names
  * @return {object} the project data json for the default project
  */
-const projectData = translateFunction => {
-    const translator = translateFunction || defaultTranslator;
-    return ({
-  "targets": [
-    {
-      "isStage": true,
-      "name": "Stage",
-      "variables": {
-        "`jEk@4|i[#Fk?(8x)AV.-my variable": [
-          "my variable",
-          0
-        ]
-      },
-      "lists": {},
-      "broadcasts": {},
-      "blocks": {},
-      "comments": {},
-      "currentCostume": 0,
-      "costumes": [
-        {
-          "name": "backdrop1",
-          "dataFormat": "svg",
-          "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
-          "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
-          "rotationCenterX": 240,
-          "rotationCenterY": 180
-        }
-      ],
-      "sounds": [],
-      "volume": 100,
-      "layerOrder": 0,
-      "tempo": 60,
-      "videoTransparency": 50,
-      "videoState": "on",
-      "textToSpeechLanguage": null
-    },
-    {
-      "isStage": false,
-      "name": "Sprite1",
-      "variables": {},
-      "lists": {},
-      "broadcasts": {},
-      "blocks": {},
-      "comments": {},
-      "currentCostume": 0,
-      "costumes": [
-        {
-          "name": "costume1",
-          "bitmapResolution": 1,
-          "dataFormat": "svg",
-          "assetId": "1069e37c8c0ee8a1c74a135ff5718f01",
-          "md5ext": "1069e37c8c0ee8a1c74a135ff5718f01.svg",
-          "rotationCenterX": 25.885849999999976,
-          "rotationCenterY": 37.22295
-        },
-        {
-          "name": "costume2",
-          "bitmapResolution": 1,
-          "dataFormat": "svg",
-          "assetId": "08242fa62f66b0dce4cd6fc0d46eebe8",
-          "md5ext": "08242fa62f66b0dce4cd6fc0d46eebe8.svg",
-          "rotationCenterX": 25.885860000000008,
-          "rotationCenterY": 37.319095000000004
-        }
-      ],
-      "sounds": [],
-      "volume": 100,
-      "layerOrder": 1,
-      "visible": true,
-      "x": 0,
-      "y": 0,
-      "size": 100,
-      "direction": 90,
-      "draggable": false,
-      "rotationStyle": "all around"
-    }
-  ],
-  "monitors": [],
-  "extensions": [],
-  "meta": {
-    "semver": "3.0.0",
-    "vm": "0.2.0",
-    "agent": "",
-    "platform": {
-      "name": "Blocklo",
-      "url": "(no link)"
-    }
-  }
-});
-};
+const projectData = () => (jsonData);
 
 
 export default projectData;

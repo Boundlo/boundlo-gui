@@ -1,9 +1,10 @@
 import projectData from './project-data';
+//const jsonData = require('./experience-container/experience.json')
 
 /* eslint-disable import/no-unresolved */
-import backdrop from '!raw-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg?';
-import costume1 from '!raw-loader!./1069e37c8c0ee8a1c74a135ff5718f01.svg?';
-import costume2 from '!raw-loader!./08242fa62f66b0dce4cd6fc0d46eebe8.svg?';
+import backdrop from '!raw-loader!./experience-container/cd21514d0531fdffb22204e0ec5ed84a.svg?';
+import costume1 from '!raw-loader!./experience-container/d75b0e65f8a5955e3c5b6d7c6961c72b.svg?';
+import costume2 from '!raw-loader!./experience-container/30019b8a176544062fbeb1913a00d13e.svg?';
 /* eslint-enable import/no-unresolved */
 
 const defaultProject = translator => {
@@ -27,12 +28,12 @@ const defaultProject = translator => {
         dataFormat: 'SVG',
         data: encoder.encode(backdrop)
     }, {
-        id: '1069e37c8c0ee8a1c74a135ff5718f01',
+        id: 'd75b0e65f8a5955e3c5b6d7c6961c72b',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(costume1)
     }, {
-        id: '08242fa62f66b0dce4cd6fc0d46eebe8',
+        id: '30019b8a176544062fbeb1913a00d13e',
         assetType: 'ImageVector',
         dataFormat: 'SVG',
         data: encoder.encode(costume2)

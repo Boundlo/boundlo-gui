@@ -27,7 +27,7 @@ describe('Project state', () => {
     });
 
     test('File->New resets project title', async () => {
-        const defaultProjectTitle = 'Scratch Project';
+        const defaultProjectTitle = 'Boundlo! 1 Experience';
         await loadUri(uri);
         const inputEl = await findByXpath(`//input[@value="${defaultProjectTitle}"]`);
         for (let i = 0; i < defaultProjectTitle.length; i++) {

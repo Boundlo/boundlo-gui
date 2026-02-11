@@ -13,7 +13,7 @@ const {
 } = new SeleniumHelper();
 
 const uri = path.resolve(__dirname, '../../build/index.html');
-
+const collapsibleMenus = ['Settings', 'File', 'Edit'];
 let driver;
 
 const FILE_MENU_XPATH = '//div[contains(@class, "menu-bar_menu-bar-item")]' +
@@ -62,10 +62,10 @@ describe('Menu bar settings', () => {
 
     test('(GH#4064) Project name should be editable', async () => {
         await loadUri(uri);
-        const el = await findByXpath('//input[@value="Scratch Project"]');
+        const el = await findByXpath('//input[@value="Boundlo! 1 Experience"]');
         await el.sendKeys(' - Personalized');
         await clickText('Costumes'); // just to blur the input
-        await clickXpath('//input[@value="Scratch Project - Personalized"]');
+        await clickXpath('//input[@value="Boundlo! 1 Experience - Personalized"]');
     });
 
     test('User is not warned before uploading project file over a fresh project', async () => {
@@ -151,7 +151,6 @@ describe('Menu bar settings', () => {
             .window()
             .setSize(1024, 768);
 
-        const collapsibleMenus = ['Settings', 'File', 'Edit', 'Tutorials'];
         for (const menu of collapsibleMenus) {
             const settingsMenu = await findByText(menu, scope.menuBar);
             expect(await settingsMenu.isDisplayed()).toBe(false);
@@ -164,7 +163,6 @@ describe('Menu bar settings', () => {
             .window()
             .setSize(1200, 768);
 
-        const collapsibleMenus = ['Settings', 'File', 'Edit', 'Tutorials'];
         for (const menu of collapsibleMenus) {
             const settingsMenu = await findByText(menu, scope.menuBar);
             expect(await settingsMenu.isDisplayed()).toBe(true);
